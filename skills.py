@@ -320,6 +320,7 @@ def average(number_list):
 
     return avg
 
+
 # HAVING TROUBLE PASSING BOTH TESTS WITH THIS ONE
 def join_strings_with_comma(list_of_words):
     """Return ['list', 'of', 'words'] like "list, of, words".
@@ -419,7 +420,7 @@ def duplicates(my_list):
     ['apple', 'banana']
 
     >>> duplicates([1, 2, 2, 4, 4, 4, 7])
-    [4, 2]
+    [2, 4]
 
 
     """
