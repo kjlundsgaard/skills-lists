@@ -184,7 +184,15 @@ def largest_int(number_list):
 
     """
 
-    return 0
+    if number_list == []:
+            return None
+    else:
+        biggest_num = number_list[0]
+        for num in number_list:
+            if num > biggest_num:
+                biggest_num = num
+
+    return biggest_num
 
 
 def halvesies(number_list):
@@ -199,8 +207,12 @@ def halvesies(number_list):
         [0.5, 2.5]
 
     """
+    halves = []
 
-    return []
+    for num in number_list:
+        halves.append(float(num)/2)
+
+    return halves
 
 
 def word_lengths(word_list):
@@ -211,7 +223,12 @@ def word_lengths(word_list):
 
     """
 
-    return []
+    word_length = []
+
+    for word in word_list:
+        word_length.append(len(word))
+
+    return word_length
 
 
 def sum_numbers(number_list):
@@ -230,7 +247,12 @@ def sum_numbers(number_list):
 
     """
 
-    return None
+    sum_nums = 0
+
+    for num in number_list:
+        sum_nums = sum_nums + num
+
+    return sum_nums
 
 
 def mult_numbers(number_list):
@@ -252,7 +274,12 @@ def mult_numbers(number_list):
 
     """
 
-    return None
+    product = 1
+
+    for num in number_list:
+        product = product * num
+
+    return product
 
 
 def join_strings(word_list):
@@ -268,10 +295,14 @@ def join_strings(word_list):
 
         >>> join_strings([])
         ''
-
     """
 
-    return "Not the right thing"
+    new_string = ""
+
+    for word in word_list:
+        new_string = new_string + word
+
+    return new_string
 
 
 def average(number_list):
@@ -284,7 +315,10 @@ def average(number_list):
     this raises an error when given an empty list.
     """
 
-    return 0
+    avg = sum_numbers(number_list) / float(len(number_list))
+    # average takes the numbers, adds them all together, and divides by the list length
+
+    return avg
 
 
 def join_strings_with_comma(list_of_words):
