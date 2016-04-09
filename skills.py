@@ -320,7 +320,7 @@ def average(number_list):
 
     return avg
 
-
+# HAVING TROUBLE PASSING BOTH TESTS WITH THIS ONE
 def join_strings_with_comma(list_of_words):
     """Return ['list', 'of', 'words'] like "list, of, words".
 
@@ -335,14 +335,25 @@ def join_strings_with_comma(list_of_words):
 
     """
 
-    return ""
+    new_string = ""
+
+    for word in list_of_words:
+        if len(list_of_words) == 1:
+            return word
+        elif list_of_words == []:
+            return ""
+        else:
+            # NEED TO FIGURE OUT A WAY TO PLACE THE COMMA WITHOUT ADDING EXTRA COMMA ON END
+            new_string = new_string + word + ", "
+
+    return new_string
 
 
 def foods_in_common(foods1, foods2):
-    """Using ANY Python data structure presented in the last week, given 2 lists of foods, 
+    """Using ANY Python data structure presented in the last week, given 2 lists of foods,
     return a set of items that are in common between the two. (Don't include any duplicates
     in the output collection.)
-    
+
     For example:
 
     >>> foods_in_common(["cheese", "bagel", "cake"], ["hummus", "beets", "bagel", "lentils"])
@@ -355,9 +366,14 @@ def foods_in_common(foods1, foods2):
 
     """
 
-    return set(['the wrong thing'])
+    foods1_set = set(foods1)
+    foods2_set = set(foods2)
+    overlapping_foods_set = foods1_set & foods2_set
+
+    return overlapping_foods_set
 
 
+# STRUGGLING WITH THIS ONE
 def reverse_list(my_list):
     """Return the inputted list, reversed.
 
@@ -370,13 +386,15 @@ def reverse_list(my_list):
         ['I', 'love', 'cookies']
 
     """
+    new_list = []
 
-    return []
+    return new_list
 
 
+# CAN'T THINK ABOUT THIS RIGHT NOW
 def reverse_list_in_place(my_list):
     """Return the inputted list reversed--WITHOUT creating a new list.
-       This will involve moving the items in my_list to different positions 
+       This will involve moving the items in my_list to different positions
        in the same list.
 
        Do not use the python methed reverse()/reversed()
@@ -393,6 +411,7 @@ def reverse_list_in_place(my_list):
     return []
 
 
+# BUHHHHHH
 def duplicates(my_list):
     """Return a list of words which are duplicated in the input list.
 
@@ -401,13 +420,20 @@ def duplicates(my_list):
 
     >>> duplicates([1, 2, 2, 4, 4, 4, 7])
     [4, 2]
-    
+
 
     """
+    word_set = set()
+    duplicates = []
 
-    return []
+    for word in my_list:
+        if word in word_set:
+            duplicates.append(word)
+
+    return duplicates
 
 
+# HOW DO I APPEND NONE?
 def find_letter_indices(list_of_words, letter):
     """Given a list of words and a letter, return a list of integers that correspond
     to the index of the first occurance of the letter in that word.
@@ -424,14 +450,23 @@ def find_letter_indices(list_of_words, letter):
     [0, 1, 2, None]
 
     """
+    # need to be able to go through entire word and if there is no letter in the word
+    # append None to the indeces list instead of the letter
+    indeces = []
 
-    return []
+    for word in list_of_words:
+        for index in range(len(word)):
+            if word[index] == letter:
+                indeces.append(index)
+
+    return indeces
+
 
 def largest_n_items(input_list, n):
-    """Given a list of integers along with an integer n, return a 
-    list of the largest n numbers in the input list in ascending order. 
+    """Given a list of integers along with an integer n, return a
+    list of the largest n numbers in the input list in ascending order.
 
-    You can assume that n will be less than the length of the list. 
+    You can assume that n will be less than the length of the list.
 
     For example:
 
