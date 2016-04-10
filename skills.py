@@ -336,16 +336,14 @@ def join_strings_with_comma(list_of_words):
 
     """
 
-    new_string = ""
-
-    for word in list_of_words:
-        if len(list_of_words) == 1:
-            return word
-        elif list_of_words == []:
-            return ""
-        else:
-            # NEED TO FIGURE OUT A WAY TO PLACE THE COMMA WITHOUT ADDING EXTRA COMMA ON END
-            new_string = new_string + word + ", "
+    if len(list_of_words) == 1:
+        return list_of_words[0]
+    elif list_of_words == []:
+        return ""
+    else:
+        new_string = list_of_words[0]
+        for word in list_of_words[1:]:
+            new_string = new_string + ", " + word
 
     return new_string
 
@@ -389,7 +387,7 @@ def reverse_list(my_list):
     """
     new_list = []
 
-    
+
 
     return new_list
 
