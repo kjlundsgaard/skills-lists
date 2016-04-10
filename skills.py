@@ -389,6 +389,8 @@ def reverse_list(my_list):
     """
     new_list = []
 
+    
+
     return new_list
 
 
@@ -408,11 +410,11 @@ def reverse_list_in_place(my_list):
 
 
     """
+    reverse_list[len(reverse_list) - 1: 0: -1]
 
     return []
 
 
-# BUHHHHHH
 def duplicates(my_list):
     """Return a list of words which are duplicated in the input list.
 
@@ -425,13 +427,14 @@ def duplicates(my_list):
 
     """
     word_set = set()
-    duplicates = []
+    duplicates = set()
 
     for word in my_list:
         if word in word_set:
-            duplicates.append(word)
+            duplicates.add(word)
+        word_set.add(word)
 
-    return duplicates
+    return list(duplicates)
 
 
 # HOW DO I APPEND NONE?
