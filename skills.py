@@ -372,7 +372,6 @@ def foods_in_common(foods1, foods2):
     return overlapping_foods_set
 
 
-# STRUGGLING WITH THIS ONE
 def reverse_list(my_list):
     """Return the inputted list, reversed.
 
@@ -386,12 +385,14 @@ def reverse_list(my_list):
 
     """
     new_list = []
+    i = 0
 
+    for i in range(len(my_list)):
+        new_list.append(my_list[len(my_list) - i - 1]
 
     return new_list
 
 
-# STRUGGLING
 def reverse_list_in_place(my_list):
     """Return the inputted list reversed--WITHOUT creating a new list.
        This will involve moving the items in my_list to different positions
@@ -399,17 +400,26 @@ def reverse_list_in_place(my_list):
 
        Do not use the python methed reverse()/reversed()
 
-        >>> reverse_list([1, 2, 3])
+        >>> reverse_list_in_place([1, 2, 3])
         [3, 2, 1]
 
-        >>> reverse_list(["cookies", "love", "I"])
+        >>> reverse_list_in_place(["cookies", "love", "I"])
         ['I', 'love', 'cookies']
 
 
     """
-    my_list[len(reverse_list) - 1: 0: -1]
+    store_value = None
+    i = 0
+
+    for i in range(len(my_list)):
+        if i == len(my_list)/2:
+            break
+        store_value = my_list[i]
+        my_list[i] = my_list[len(my_list) - i - 1]
+        my_list[len(my_list) - i - 1] = store_value
 
     return my_list
+
 
 def duplicates(my_list):
     """Return a list of words which are duplicated in the input list.
