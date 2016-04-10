@@ -388,11 +388,10 @@ def reverse_list(my_list):
     new_list = []
 
 
-
     return new_list
 
 
-# CAN'T THINK ABOUT THIS RIGHT NOW
+# STRUGGLING
 def reverse_list_in_place(my_list):
     """Return the inputted list reversed--WITHOUT creating a new list.
        This will involve moving the items in my_list to different positions
@@ -408,10 +407,9 @@ def reverse_list_in_place(my_list):
 
 
     """
-    reverse_list[len(reverse_list) - 1: 0: -1]
+    my_list[len(reverse_list) - 1: 0: -1]
 
-    return []
-
+    return my_list
 
 def duplicates(my_list):
     """Return a list of words which are duplicated in the input list.
@@ -454,14 +452,17 @@ def find_letter_indices(list_of_words, letter):
     """
     # need to be able to go through entire word and if there is no letter in the word
     # append None to the indeces list instead of the letter
-    indeces = []
+    indices = []
 
     for word in list_of_words:
         for index in range(len(word)):
             if word[index] == letter:
-                indeces.append(index)
+                indices.append(index)
+                break
+            elif index == len(word) - 1:
+                indices.append(None)
 
-    return indeces
+    return indices
 
 
 def largest_n_items(input_list, n):
