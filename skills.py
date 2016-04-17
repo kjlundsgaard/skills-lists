@@ -388,7 +388,7 @@ def reverse_list(my_list):
     i = 0
 
     for i in range(len(my_list)):
-        new_list.append(my_list[len(my_list) - i - 1]
+        new_list.append(my_list[len(my_list) - i - 1])
 
     return new_list
 
@@ -443,7 +443,6 @@ def duplicates(my_list):
     return list(duplicates)
 
 
-# HOW DO I APPEND NONE?
 def find_letter_indices(list_of_words, letter):
     """Given a list of words and a letter, return a list of integers that correspond
     to the index of the first occurance of the letter in that word.
@@ -487,8 +486,9 @@ def largest_n_items(input_list, n):
     [59, 700, 6006]
 
     """
+    sorted_nums = sorted(input_list)
 
-    return []
+    return sorted_nums[-n:]
 
 
 ##############################################################################
